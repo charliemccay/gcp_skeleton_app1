@@ -1,8 +1,8 @@
 
 
-const { postJSON, pause } = require('../common/sharedFunctions');
+const { postJSON, pause } = require('./sharedFunctions');
 
-const pharma_server_URL = process.env.PHARMA_SERVER_URL || process.argv[2] || 'http://localhost:8081'
+const pharma_server_URL = (process.env.SERVER_URL) ? process.env.SERVER_URL + '/pharma-server' : 'http://localhost:8081'
 const start_URL = pharma_server_URL + '/start_encounter'
 const finish_URL = pharma_server_URL + '/finish_encounter'
 

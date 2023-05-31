@@ -2,9 +2,9 @@ const app = require('express')();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const { postJSON, pause } = require('../common/sharedFunctions');
+const { postJSON, pause } = require('./sharedFunctions');
 
-const tympa_server_URL = process.env.TYMPA_SERVER_URL || process.argv[2] || 'http://localhost:8000'
+const tympa_server_URL =  (process.env.SERVER_URL) ? process.env.SERVER_URL + '/tympa-server' : 'http://localhost:8000';
 const assessment_request_URL = tympa_server_URL + '/assessment_request'
 const encounter_complete_URL = tympa_server_URL + '/encounter_complete'
 

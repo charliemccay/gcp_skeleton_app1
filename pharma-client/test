@@ -1,0 +1,10 @@
+:
+echo "testing"
+curl -m 70 -X POST https://us-central1-charlie1-387606.cloudfunctions.net/tympa-server/encounter_complete -H "Content-Type: application/json" -d {}
+echo "testing 2"
+curl -m 70 -X POST https://us-central1-charlie1-387606.cloudfunctions.net/typma-server/encounter_complete -H "Content-Type: application/json" -d {}
+echo testing3
+echo "testing 2"
+curl -m 70 -X POST https://us-central1-charlie1-387606.cloudfunctions.net/tympa-server/encounter_complete -H "Content-Type: application/json" -d {}
+
+

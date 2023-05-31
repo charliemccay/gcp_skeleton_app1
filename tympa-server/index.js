@@ -3,12 +3,12 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const { postJSON, pause } = require('../common/sharedFunctions');
+const { postJSON, pause } = require('./sharedFunctions');
 
-const tympa_device_URL = process.env.TYMPA_DEVICE_URL || process.argv[2] || 'http://localhost:3000'
-const start_event_URL = tympa_device_URL + '/start_event'
-const pharma_server_URL = process.env.PHARMA_SERVER_URL || process.argv[2] || 'http://localhost:8081'
-const assessment_report_URL = pharma_server_URL + '/assessment_report'
+const tympa_device_URL =  (process.env.SERVER_URL) ? process.env.SERVER_URL + '/tympa-device' :'http://localhost:3000';
+const start_event_URL = tympa_device_URL + '/start_event';
+const pharma_server_URL =  (process.env.SERVER_URL) ? process.env.SERVER_URL + '/pharma-server' : 'http://localhost:8081';
+const assessment_report_URL = pharma_server_URL + '/assessment_report';
 
 const port = 8000;
 
@@ -37,6 +37,7 @@ app.post('/encounter_complete', (req, res) => {
     const jsonData = req.body;
     console.log(jsonData)
     res.status(200).send({message: 'encounter_complete'})
+
 });
 
 app.post('/tympa_device_finish', (req, res) => {
