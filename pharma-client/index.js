@@ -11,21 +11,21 @@ const finish_URL = pharma_server_URL + '/finish_encounter'
 // start
 const start_message = {
     patient_id: 963401,
-    organisation: 013004,
+    organisation: 13004,
     type: 'start'
 }
 console.log('client sending start message')
 postJSON(start_URL, start_message)
     .then(json => console.log(json))
 
-    
+
 console.log('client about to pause')
 pause()
 console.log('client paused')
 
 var finish_message = {
     patient_id: 963401,
-    organisation: 013004,
+    organisation: 13004,
     type: 'encounter_complete',
     data: {}
 }
